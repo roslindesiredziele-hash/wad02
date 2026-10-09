@@ -28,3 +28,7 @@ class person
     }
 }
 
+const p1 = new person("desire", "Dziele", 25);
+const p2 = new person("Jane", "Smith", 30, "Dog");
+p1.print();
+p2.print();
