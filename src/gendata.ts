@@ -39,7 +39,7 @@ async function getAnimal(): Promise<string>
         throw new Error("no data received");
     }
     const data2 = await data1.json();
-    console.log(data2);
+    //console.log(data2);
     return data2.data[0].commonName;
 }
 
