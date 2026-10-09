@@ -21,4 +21,10 @@ class person
                 this.pet = p;
             }
     }
+
+    print(): void
+    {
+        console.log(`Name: ${this.name}, Surname: ${this.surname}, Age: ${this.age} years old, Pet: ${this.pet ?? "No pet"}`);
+    }
 }
+
