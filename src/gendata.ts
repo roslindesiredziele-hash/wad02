@@ -28,6 +28,19 @@ class person
     }
 }
 
+async function getAnimal(): Promise<string>
+{
+    const aadress = "https://extinct-api.herokuapp.com/api/v1/animal/random";
+    const data1 = await fetch(aadress);
+    if (!data1.ok)
+    {
+        throw new Error("no data received");
+    }
+    const data2 = await data1.json();
+    console.log(data2);
+    return data2.data[0].commonName;
+}
+
 const p1 = new person("desire", "Dziele", 25);
 const p2 = new person("Jane", "Smith", 30, "Dog");
 p1.print();
