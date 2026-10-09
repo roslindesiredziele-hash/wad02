@@ -43,7 +43,7 @@ async function getAnimal(): Promise<string>
     return data2.data[0].commonName;
 }
 
-sync function main(): Promise<void>
+async function main(): Promise<void>
 {
 
     const p1 = new person("desire", "Dziele", 25);
@@ -63,14 +63,27 @@ sync function main(): Promise<void>
         {
             const nn = faker.person.firstName();
             const ff = faker.person.fullName();
-            const p = new Person
+            const p = new person
             (
                 ff,
                 nn,
                 20 + i
             );
+
+            if (i%3!=0)
+            {
+                const pt = await getAnimal();
+                p.pet = pt;
+            }
             
             tab.push(p);
         }
 
+        for(let j = 0; j < tab.length; j++)
+        {
+            tab[j].print();
+        }
+
 }
+
+main();
