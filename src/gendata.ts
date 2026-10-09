@@ -43,21 +43,34 @@ async function getAnimal(): Promise<string>
     return data2.data[0].commonName;
 }
 
-const p1 = new person("desire", "Dziele", 25);
-const p2 = new person("Jane", "Smith", 30, "Dog");
-p1.print();
-p2.print();
-
-for(let i=0;i<20;i++)
+sync function main(): Promise<void>
 {
-    const name = faker.person.firstName();
-    const surname = faker.person.lastName();
 
-    const p = new Person(
-        name,
-        surname,
-        20 + i
-    );
+    const p1 = new person("desire", "Dziele", 25);
+    const p2 = new person("Jane", "Smith", 30, "Dog");
+    //p1.print();
+    //p2.print();
 
+    const pt = await getAnimal();
+    const p = new person("desire", "Dziele", 25, pt);
+
+    const tab: person[] = [];
+    tab.push(p1);
+    tab.push(p2);
     tab.push(p);
+
+    for (let i = 0; i < 20; i++) 
+        {
+            const nn = faker.person.firstName();
+            const ff = faker.person.fullName();
+            const p = new Person
+            (
+                ff,
+                nn,
+                20 + i
+            );
+            
+            tab.push(p);
+        }
+
 }
