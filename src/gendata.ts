@@ -15,4 +15,10 @@ class person
         this.name = n;
         this.surname = s;
         this.age = a;
+
+        if (p) 
+            {
+                this.pet = p;
+            }
     }
+}
