@@ -1,17 +1,17 @@
 DATA GENERATOR
 
-Description:
+Description
 Laboratory project for the Web Applications Development course.
 The application generates random people using Faker, retrieves extinct animal data from a public REST API, assigns animals as pets to selected people, and prints the generated dataset to the console.
 
-TECHNOLOGIES:
+TECHNOLOGIES
 Node.js
 TypeScript
 Faker (@faker-js/faker)
 Fetch API
 Git
 
-FEATURES:
+FEATURES
 Person class implementation
 Age validation
 Random data generation with Faker
@@ -19,7 +19,7 @@ REST API integration
 Asynchronous programming with async/await
 Console output of generated data
 npm script automation
-PROJECT STRUCTURE:
+PROJECT STRUCTURE
 wad02/
 ├── .gitignore
 ├── package.json
@@ -30,22 +30,23 @@ wad02/
     └── gendata.js
 
 INSTALLATION:
-Clone the repository:
-git clone 
+Clone the repository
+git clone https://github.com/roslindesiredziele-hash/wad02.git
 cd wad02
 
-Install dependencies:
+Install dependencies
 npm install
 
-Running the Application
+RUNNING THE APPLICATION
 Generate and display the dataset:
-
 npm run gen
+
 Example Output
 Name: Jane Smith, Age: 30 years old, Pet: Dog
 Name: Lera Feil, Age: 21 years old, Pet: Guam flycatcher
 Name: Mack Kris, Age: 23 years old, Pet: No pet
-Learning Objectives
+
+OBJECTIVES
 This project demonstrates:
 
 TypeScript classes and objects
