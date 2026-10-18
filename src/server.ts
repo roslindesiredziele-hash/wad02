@@ -78,6 +78,18 @@ app.post('/api/persons', (req: Request, res: Response) =>
         return;
     }
 
+    // check if a person with the same name and surname already exists in the array
+    const exists = tab.some(
+    p =>
+        p.name.toLowerCase() === name.toLowerCase() &&
+        p.surname.toLowerCase() === surname.toLowerCase()
+);
+
+if (exists)
+{
+    res.status(409).json("person already exists");
+    return;
+}
     const pers: person = {name, surname, age, pet};
     tab.push(pers);
 
