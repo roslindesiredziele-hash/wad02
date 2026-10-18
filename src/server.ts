@@ -43,7 +43,10 @@ app.get('/api/persons/:id', (req: Request, res: Response) =>
 
 app.post('/api/persons', (req: Request, res: Response) =>
 {
+    // extract the properties from the request body
     const {name, surname, age, pet} = req.body;
+
+    // name is required and must be a non-empty string
     if(!name || typeof(name) !== 'string' || name.trim() === "")
     {
         console.log("incorrect name");
@@ -51,6 +54,7 @@ app.post('/api/persons', (req: Request, res: Response) =>
         return;
     }
 
+    // surname is required and must be a non-empty string
     if(!surname || typeof(surname) !== 'string' || surname.trim() === "")
     {
         console.log("incorrect surname");
@@ -58,6 +62,7 @@ app.post('/api/persons', (req: Request, res: Response) =>
         return;
     }
 
+// age is required and must be a non-negative number
     if(!age || typeof(age) !== 'number' || age < 0)
     {
         console.log("incorrect age");
@@ -65,6 +70,7 @@ app.post('/api/persons', (req: Request, res: Response) =>
         return;
     }
 
+// pet is optional, but if provided, it must be a non-empty string
     if(pet && (typeof(pet) !== 'string' || pet.trim() === ""))
     {
         console.log("incorrect pet");
