@@ -97,30 +97,7 @@ if (exists)
 }
 );
 
-app.delete('/api/persons', (req: Request, res: Response) =>
-{
-    tab.length = 0;
-    res.json({message: "all persons deleted"});
-}
-);
-
-app.delete('/api/persons/:id', (req: Request, res: Response) =>
-{
-    const num = Number(req.params.id);
-    if(!Number.isInteger(num) || num < 0 || num >= tab.length)
-    {
-        console.log("wrong id requested - ", num);
-        res.status(400).json(`wrong id - ${num}`);
-    }
-    else
-    {
-        tab.splice(num, 1);
-        res.json({message: "person deleted"});
-    }
-}
-);
-
-//....................................................................
+/// ..............................
 
 app.listen(port, () =>
     {
