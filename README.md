@@ -4,8 +4,6 @@ Description
 Laboratory project for the Web Applications Development course.
 The application generates random people using Faker, retrieves extinct animal data from a public REST API, assigns animals as pets to selected people, and prints the generated dataset to the console.
 
-TECHNOLOGIES
-Node.js
 TypeScript
 Faker (@faker-js/faker)
 Fetch API
