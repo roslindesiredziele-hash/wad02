@@ -51,11 +51,30 @@ app.post('/api/persons', (req: Request, res: Response) =>
         return;
     }
 
-    //other tests should be added here for surname, age and pet
-    //for optional pet - if(pet && ( - possible problem here --) ) {-- do st --} - i.e first check whether pet wa provided, and if yes, then check whether it is a string and not empty
+    if(!surname || typeof(surname) !== 'string' || surname.trim() === "")
+    {
+        console.log("incorrect surname");
+        res.status(400).json("incorrect surname");
+        return;
+    }
+
+    if(!age || typeof(age) !== 'number' || age < 0)
+    {
+        console.log("incorrect age");
+        res.status(400).json("incorrect age");
+        return;
+    }
+
+    if(pet && (typeof(pet) !== 'string' || pet.trim() === ""))
+    {
+        console.log("incorrect pet");
+        res.status(400).json("incorrect pet");
+        return;
+    }
 
     const pers: person = {name, surname, age, pet};
     tab.push(pers);
+
     res.status(201).json({message: "ok"});
 }
 );
