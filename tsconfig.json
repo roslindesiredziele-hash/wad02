@@ -7,8 +7,10 @@
     "outDir": "dist",
     "strict": true,
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+     "rewriteRelativeImportExtensions": true,
+    "allowImportingTsExtensions": true
   },
   "include": ["src"],
-  "exclude": ["node_modules", "frontend"]
+  "exclude": ["node_modules", "frontend", "ads"]
 }
