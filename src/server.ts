@@ -63,7 +63,7 @@ app.post('/api/persons', (req: Request, res: Response) =>
     }
 
 // age is required and must be a non-negative number
-    if(!age || typeof(age) !== 'number' || age < 0)
+    if(typeof(age) !== 'number' || age < 0)
     {
         console.log("incorrect age");
         res.status(400).json("incorrect age");
