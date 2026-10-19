@@ -8,14 +8,18 @@
     </head>
 <body>
     <marquee>
-        <h1>Hello, this is a message for you Daniela :)</h1>
+        <h1>Hello, I have a special gift for U! :)</h1>
     </marquee>
     <marquee behavior="alternate">
-        <h1>you should've clicked on the button!</h1>
+        <h1>If you are wise and nice you'll get it soon! :)</h1>
     </marquee>
     <app-root>
-        <button onclick="window.location.href='https://www.bershka.com/pl/tr%C3%B3jk%C4%85tny-top-od-bikini-z-cekinami-c0p226931547.html?colorId=700'">special-gift-4-u!</button>
-    </app-root>
+        <button
+    id="giftButton"
+    disabled
+    onclick="window.location.href='https://www.bershka.com/pl/tr%C3%B3jk%C4%85tny-top-od-bikini-z-cekinami-c0p226931547.html?colorId=700'">
+    🔒 Gift locked
+</button>
     <timer-component>
         <div id="countdown">deadline</div>
     </timer-component>
@@ -33,6 +37,18 @@ function updateCountdown() {
         countdown.innerHTML = "🎉 Surprise time! 🎁";
         return;
     }
+
+    const giftButton = document.getElementById("giftButton");
+
+    if (diff <= 0) {
+    countdown.innerHTML =
+        "🎉 Surprise time! 🎁<br>❤️ Your gift is now unlocked ❤️";
+
+    giftButton.disabled = false;
+    giftButton.innerHTML = "🎁 Open Your Gift";
+
+    return;
+}
 
     const days = Math.floor(6);
     const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
