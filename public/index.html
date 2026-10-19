@@ -21,17 +21,16 @@
         🔒 Gift locked
     </button>
     <timer-component>
-        <div id="countdown"></div>
+        <div id="countdown">deadline</div>
     </timer-component>
 </app-root>
 </body>
 <script>
-const deadline = new Date("2026-10-02T18:00:00");
+const deadline = new Date("2026-10-25T00:00:00");
 
 const timer = setInterval(updateCountdown, 1000);
 
 function updateCountdown() {
-
     const countdown = document.getElementById("countdown");
     const giftButton = document.getElementById("giftButton");
 
@@ -39,7 +38,6 @@ function updateCountdown() {
     const diff = deadline.getTime() - now.getTime();
 
     if (diff <= 0) {
-
         clearInterval(timer);
 
         countdown.innerHTML =
