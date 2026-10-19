@@ -1,6 +1,19 @@
-:root {
-    --color-text: #0f172a;
-    --color-text-muted: #64748b;
-    --color-label: #334155;
-    --color-suffix: #ffffff;
+button {
+    border: none;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+marquee {
+    border: none;
+    background-color:lightblue;
+    color: black;
+}
+
+button:hover {
+    background-color: #c8d41f;
 }
