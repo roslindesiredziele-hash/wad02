@@ -1,19 +1,46 @@
 button {
     border: none;
     padding: 10px 20px;
-    background-color: #4CAF50;
+    background-color: #802828;
     color: white;
     border-radius: 5px;
+    margin: 10px;
     cursor: pointer;
     font-size: 16px;
+    transition: background-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 marquee {
     border: none;
-    background-color:lightblue;
-    color: black;
+    background-color: lavender;
+    color: blue-purple;
 }
 
 button:hover {
-    background-color: #c8d41f;
+    background-color: #3f2b75;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #802828;
+}
+
+app-root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 20px auto;
+    max-width: 800px;
+    min-height: 200px;
+
+    padding: 20px;
+
+    background-color: #f8e6eb;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 8px 24px rgba(0,0,0,0.12);
+
+    border: 1px solid rgba(255,255,255,0.4);
 }
