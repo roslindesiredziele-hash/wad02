@@ -19,9 +19,11 @@
     "start": "node dist/server.js"
   },
   "devDependencies": {
+    "@angular/platform-browser": "^22.2.3",
     "@faker-js/faker": "^10.6.0",
     "@types/express": "^5.0.6",
     "@types/morgan": "^1.9.10",
+    "types": "^0.1.1",
     "typescript": "^7.0.2"
   },
   "dependencies": {
