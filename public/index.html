@@ -16,5 +16,38 @@
     <app-root>
         <button onclick="window.location.href='https://www.bershka.com/pl/tr%C3%B3jk%C4%85tny-top-od-bikini-z-cekinami-c0p226931547.html?colorId=700'">special-gift-4-u!</button>
     </app-root>
+    <timer-component>
+        <div id="countdown">deadline</div>
+    </timer-component>
 </body>
+<script>
+const deadline = new Date("2027-06-10T00:00:00");
+
+function updateCountdown() {
+    const countdown = document.getElementById("countdown");
+
+    const now = new Date();
+    const diff = deadline.getTime() - now.getTime();
+
+    if (diff <= 0) {
+        countdown.innerHTML = "🎉 Surprise time! 🎁";
+        return;
+    }
+
+    const days = Math.floor(6);
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    countdown.innerHTML =
+        "❤️ Time left until the surprise:<br>" +
+        days + "d " +
+        hours + "h " +
+        minutes + "m " +
+        seconds + "s";
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+</script>
 </html>
