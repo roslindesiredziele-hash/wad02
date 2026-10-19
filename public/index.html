@@ -15,55 +15,52 @@
     </marquee>
     <app-root>
         <button
-    id="giftButton"
-    disabled
-    onclick="window.location.href='https://www.bershka.com/pl/tr%C3%B3jk%C4%85tny-top-od-bikini-z-cekinami-c0p226931547.html?colorId=700'">
-    🔒 Gift locked
-</button>
+        id="giftButton"
+        disabled
+        onclick="window.location.href='https://www.bershka.com/pl/tr%C3%B3jk%C4%85tny-top-od-bikini-z-cekinami-c0p226931547.html?colorId=700'">
+        🔒 Gift locked
+    </button>
     <timer-component>
-        <div id="countdown">deadline</div>
+        <div id="countdown"></div>
     </timer-component>
+</app-root>
 </body>
 <script>
-const deadline = new Date("2027-06-10T00:00:00");
+const deadline = new Date("2026-10-02T18:00:00");
+
+const timer = setInterval(updateCountdown, 1000);
 
 function updateCountdown() {
+
     const countdown = document.getElementById("countdown");
+    const giftButton = document.getElementById("giftButton");
 
     const now = new Date();
     const diff = deadline.getTime() - now.getTime();
 
     if (diff <= 0) {
-        countdown.innerHTML = "🎉 Surprise time! 🎁";
+
+        clearInterval(timer);
+
+        countdown.innerHTML =
+            "🎉 Surprise time! 🎁<br>❤️ Your gift is now unlocked ❤️";
+
+        giftButton.disabled = false;
+        giftButton.innerHTML = "🎁 Open Your Gift";
+
         return;
     }
 
-    const giftButton = document.getElementById("giftButton");
-
-    if (diff <= 0) {
-    countdown.innerHTML =
-        "🎉 Surprise time! 🎁<br>❤️ Your gift is now unlocked ❤️";
-
-    giftButton.disabled = false;
-    giftButton.innerHTML = "🎁 Open Your Gift";
-
-    return;
-}
-
-    const days = Math.floor(0);
-    const hours = Math.floor(0);
-    const minutes = Math.floor(0);
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
     const seconds = Math.floor((diff / 1000) % 60);
 
     countdown.innerHTML =
-        "❤️ Time left until the surprise:<br>" +
-        days + "d " +
-        hours + "h " +
-        minutes + "m " +
-        seconds + "s";
+        `❤️ Time left until the surprise:<br>
+         ${days}d ${hours}h ${minutes}m ${seconds}s`;
 }
 
 updateCountdown();
-setInterval(updateCountdown, 1000);
 </script>
 </html>
